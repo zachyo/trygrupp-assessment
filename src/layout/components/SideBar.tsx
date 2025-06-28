@@ -47,8 +47,8 @@ export const SideBar = ({ setShowSidebar, showSideBar }: SideBarProps) => {
     <div className={`${sideBarStyle} bg-white`}>
       <div className="w-[calc(100vw-50px)] md:w-68 pt-6 lg:pt-8 py-8 h-[100vh] lg:h-screen min-h-[calc(100vh-40px)] flex flex-col overflow-scroll  justify-between">
         <div className="flex-1">
-          <div className="px-6  flex items-center justify-end lg:justify-between">
-            <img src={Logo} alt="logo" className="w-[137px] hidden lg:block" />
+          <div className="px-6  flex items-center justify-between">
+            <img src={Logo} alt="logo" className="w-[137px]" />
             <ChevronsLeft
               className="cursor-pointer hover:bg-slate-100 p-1 lg:hidden rounded border border-black"
               onClick={() => setShowSidebar?.(false)}
