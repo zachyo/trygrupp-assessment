@@ -41,7 +41,7 @@ const RolesTable = () => {
           <CloudDownload /> Download all
         </button>
       </div>
-      <div className="container mx-auto py-10">
+      <div className="py-10">
         {loading ? (
           <Loader2 className="animate-spin" />
         ) : (

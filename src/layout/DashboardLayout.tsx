@@ -27,7 +27,7 @@ const DashboardLayout = () => {
     <div className="w-screen h-screen flex justify-between flex-row overflow-hidden bg-gray-50">
       {showSideBar && (
         <div
-          className="fixed inset-0 bg-black/65 bg-opacity-50 z-10 lg:hidden"
+          className="fixed inset-0 bg-black/65 bg-opacity-50 z-[51] lg:hidden"
           onClick={() => setShowSidebar(false)}
         />
       )}

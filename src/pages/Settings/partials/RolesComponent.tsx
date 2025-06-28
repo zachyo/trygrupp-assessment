@@ -43,6 +43,7 @@ const RolesComponent = () => {
                 <input
                   type="text"
                   value={"billing@untitledui.com"}
+                  onChange={() => {}}
                   className="border border-gray-600 bg-white rounded-md mt-3 px-2 py-1 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 />
               </div>
@@ -60,8 +61,12 @@ const RolesComponent = () => {
             defaultValue={selectedRole}
             onValueChange={setSelectedRole}
           >
-            {["Superadmin", "Developeradmin", "Supportadmin"].map((item) => (
-              <RoleSelector isSelected={item === selectedRole} role={item} />
+            {["Superadmin", "Developeradmin", "Supportadmin"].map((item, i) => (
+              <RoleSelector
+                key={i}
+                isSelected={item === selectedRole}
+                role={item}
+              />
             ))}
           </RadioGroup>
           <button className="flex gap-2 items-center text-sm mt-4">

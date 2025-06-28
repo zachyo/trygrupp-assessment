@@ -25,6 +25,7 @@ export const columns: ColumnDef<Role>[] = [
         checked={table.getIsAllPageRowsSelected()}
         onChange={(e) => table.toggleAllPageRowsSelected(e.target.checked)}
         aria-label="Select all"
+        className="w-4 h-4 bg-white mt-2"
       />
     ),
     cell: ({ row }) => (
@@ -33,6 +34,7 @@ export const columns: ColumnDef<Role>[] = [
         checked={row.getIsSelected()}
         onChange={(e) => row.toggleSelected(e.target.checked)}
         aria-label="Select row"
+        className="bg-white h-4 w-4 mt-2"
       />
     ),
     enableSorting: false,
@@ -65,17 +67,20 @@ export const columns: ColumnDef<Role>[] = [
       const users = row.getValue("users") as string[];
       if (!users || users.length === 0) return <p>No users</p>;
       return (
-        <div className="flex">
-          {users.map((user, i) => (
-            <img
-              src={user}
-              alt="user"
-              className={cn(
-                "rounded-full h-10 w-10 border-2 border-white",
-                i > 0 && "-ml-3"
-              )}
-            />
-          ))}
+        <div className="flex w-40">
+          {users
+            .filter((_, i) => i < 5)
+            .map((user, i) => (
+              <img
+                key={i}
+                src={user}
+                alt="user"
+                className={cn(
+                  "rounded-full h-10 w-10 border-2 border-white",
+                  i > 0 && "-ml-3"
+                )}
+              />
+            ))}
         </div>
       );
     },
